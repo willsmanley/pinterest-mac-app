@@ -1,3 +1,3 @@
 # Pinterest Mac App
 
-`npm i && npm run build`
+`npm i && npm run dev-build`
