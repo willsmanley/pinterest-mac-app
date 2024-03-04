@@ -1,0 +1,25 @@
+{
+  "name": "pinterest-mac-app",
+  "version": "0.0.1",
+  "description": "Pinterest App for Mac Store",
+  "main": "index.js",
+  "scripts": {
+    "dev-build": "electron-builder --dir",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.pinterest.app",
+    "mac": {
+      "category": "public.app-category.social-networking",
+      "target": "mas",
+      "icon": "build/app.icns"
+    }
+  }  
+}
