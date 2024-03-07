@@ -1,7 +1,7 @@
 {
-  "name": "pinterest-mac-app",
+  "name": "Pinterest",
   "version": "0.0.1",
-  "description": "Pinterest App for Mac Store",
+  "description": "Pinterest",
   "main": "index.js",
   "scripts": {
     "dev-build": "electron-builder --dir",
