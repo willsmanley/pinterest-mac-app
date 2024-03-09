@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+const { autoUpdater } = require('electron-updater');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -24,4 +25,14 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
+  autoUpdater.checkForUpdatesAndNotify();
+});
+
+autoUpdater.on('update-available', () => {
+  console.log('Update available');
+});
+
+autoUpdater.on('update-downloaded', () => {
+  console.log('Update downloaded');
+  autoUpdater.quitAndInstall();
 });

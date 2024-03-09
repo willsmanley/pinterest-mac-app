@@ -3,23 +3,43 @@
   "version": "0.0.1",
   "description": "Pinterest",
   "main": "index.js",
-  "scripts": {
-    "dev-build": "electron-builder --dir",
-    "build": "electron-builder"
+  "author": "Pinterest",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/willsmanley/pinterest-mac-app"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "start": "electron .",
+    "dev-build": "electron-builder --dir",
+    "build": "electron-builder",
+    "release": "electron-builder --publish always"
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.8"
+  },
   "devDependencies": {
-    "electron": "^29.1.0",
-    "electron-builder": "^24.13.3"
+    "electron": "^29.1.1",
+    "electron-builder": "^24.13.3",
+    "electron-notarize": "^1.2.2"
   },
   "build": {
+    "afterSign": "scripts/notarize.js",
     "appId": "com.pinterest.app",
     "mac": {
       "category": "public.app-category.social-networking",
       "target": "mas",
-      "icon": "build/app.icns"
+      "icon": "build/app.icns",
+      "hardenedRuntime": true,
+      "entitlements": "./entitlements.plist",
+      "entitlementsInherit": "./entitlements.plist"
     }
-  }  
+  },
+  "publish": [
+    {
+      "provider": "github",
+      "owner": "willsmanley",
+      "repo": "pinterest-mac-app"
+    }
+  ]
 }
