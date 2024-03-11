@@ -1,6 +1,7 @@
 const { notarize } = require('electron-notarize');
 
 exports.default = async function notarizing(context) {
+    return;
 
   // TODO: remove this line once we have developer cert in keychain
 //   return;

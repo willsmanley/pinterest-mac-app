@@ -28,11 +28,18 @@
     "appId": "com.pinterest.app",
     "mac": {
       "category": "public.app-category.social-networking",
-      "target": "mas",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        }
+      ],
       "icon": "build/app.icns",
+      "type": "distribution",
       "hardenedRuntime": true,
       "entitlements": "./entitlements.plist",
-      "entitlementsInherit": "./entitlements.plist"
+      "entitlementsInherit": "./entitlements.plist",
+      "identity": "Pinterest"
     }
   },
   "publish": [
